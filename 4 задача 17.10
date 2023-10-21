@@ -1,15 +1,17 @@
 a='hgd5fjd5,yd,b ugfr76jhcfytr77889ыоп ыровпмфокпфав      '
-a=list(a)
-d=0
-f=[]
-for i in range(len(a)):
-    if a[i].isalpha()==True:
-        if d % 2 == 0:
-            s=a[i].upper()
-            f+=s
-        d+=1
-        if d % 2 == 0:
-            f+=a[i]
-    else :
-        f.insert(i,a[i])
-print(''.join(f))
+def r(a):
+    a=list(a)
+    d=0
+    f=[]
+    for i in range(len(a)):
+        if a[i].isalpha()==True:
+            if d % 2 == 0:
+                s=a[i].upper()
+                f+=s
+            d+=1
+            if d % 2 == 0:
+                f+=a[i]
+        else :
+            f.insert(i,a[i])
+    print(''.join(f))
+r(a)
