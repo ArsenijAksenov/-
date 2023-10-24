@@ -10,14 +10,14 @@ def g(a):
 
     while len(l)!=0:
         if d==1:
-            b=a[0:l[1]]+a[l[0]+1:len(a)]
+            b=a[:l[1]]+a[l[0]+1:]
             l.pop(1)
             l.pop(0)
         
             d+=1
 
         else:
-            b = b[0:l[1]] + b[l[0]+1:len(b)]
+            b = b[:l[1]] + b[l[0]+1:]
             l.pop(1)
             l.pop(0)
 
