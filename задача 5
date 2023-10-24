@@ -1,25 +1,32 @@
-a='iusuav(0sdjghadg)jhsdgbsjdl(sbfjkabsdfhvawe)(hahfdhfzfdh)areha()e'
+a='iusuav(0sdjghadg)jhsdgbsjdl(sbfsdf)(hahfdhfzfdh)areha()e'#доделать выдает ошибку на (())
 def g(a):
     l=[]
+    l1=[]
     b=''
     for i in range(len(a)):
-        if a[i]=='('or a[i]==')':
-            l.append(i)
+        if a[i-1]==')':
+            l.append(i-1)
+    for i in range(len(a)):
+        if a[i-1]=='(':
+            l1.append(i-1)
     d=1
     l=list(reversed(l))
-
+    l1=list(reversed(l1))
+    print(l,l1)
     while len(l)!=0:
         if d==1:
-            b=a[:l[1]]+a[l[0]+1:]
-            l.pop(1)
+            b=a[:l1[0]]+a[l[0]+1:]
             l.pop(0)
+            l1.pop(0)
         
             d+=1
-
+            print(l,l1,a)
         else:
-            b = b[:l[1]] + b[l[0]+1:]
-            l.pop(1)
+            b = b[:l1[0]] + b[l[0]+1:]
             l.pop(0)
+            l1.pop(0)
+            print(l,l1,b)
 
     print(b)
 g(a)
+
