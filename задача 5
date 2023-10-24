@@ -1,0 +1,25 @@
+a='iusuav(0sdjghadg)jhsdgbsjdl(sbfjkabsdfhvawe)(hahfdhfzfdh)areha()e'
+def g(a):
+    l=[]
+    b=''
+    for i in range(len(a)):
+        if a[i]=='('or a[i]==')':
+            l.append(i)
+    d=1
+    l=list(reversed(l))
+
+    while len(l)!=0:
+        if d==1:
+            b=a[0:l[1]]+a[l[0]+1:len(a)]
+            l.pop(1)
+            l.pop(0)
+        
+            d+=1
+
+        else:
+            b = b[0:l[1]] + b[l[0]+1:len(b)]
+            l.pop(1)
+            l.pop(0)
+
+    print(b)
+g(a)
