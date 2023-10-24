@@ -1,0 +1,12 @@
+a='@@@@sogHiSBD@@@@'
+def i(a):
+    a=list(a)
+    cnd=0
+    for i in range(len(a)):
+        if a[i] == '@':
+            cnd+=1
+    while cnd !=0:
+        a.remove('@')
+        cnd-=1
+    print(a)
+i(a)
