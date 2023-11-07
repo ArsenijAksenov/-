@@ -1,0 +1,37 @@
+inp = open("input.txt",'r')
+out = open("output.txt",'w')
+n, s = [int(x) for x in inp.readline().split()]
+m = []
+m1 = []
+cnd = 0 
+g = 0
+ans = []
+q = [int(x) for x in inp.readline().split()]
+for i in range(n):
+    if int(q[i]) > 0 :
+        m1.append(int(q[i]))
+for i in range(n):
+    if int(q[i]) > 0:
+        m.append(int(q[i]))
+for i in range(n):
+    if int(q[i]) > 0:
+        m.append(int(q[i]))
+if len(m1) == 1 and m1[0] <= s:
+    out.write(str(m1[0]) + "\n")
+elif len(m1) == 1 and m1[0] > s:
+    out.write('0'+"\n")
+elif n == 0:
+    out.write('0' + "\n")
+elif sum(m1) < s:
+    out.write(str(sum(m1)) + "\n")
+else:
+    while g < s:
+        g += min(m1)
+        m1.remove(min(m1))
+        cnd += 1
+    cnd -= 1
+    for i in range(len(m)):
+        v = sum(m[i:cnd+i])
+        if v <= s:
+            ans.append(v)
+    out.write(str(max(ans)) + "\n")
