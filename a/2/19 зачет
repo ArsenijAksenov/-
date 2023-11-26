@@ -7,3 +7,4 @@ def b(a):
         h+=t
         m.append(h)
     print(m)
+b(a)
