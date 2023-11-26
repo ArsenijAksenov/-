@@ -1,15 +1,22 @@
-x='ewug!!!!!!buwbfwhf!!!!!!!!'
+x='ewug??????buwbfwhf??'#баг с чередованием
 def r(x):
     cnd = 0
+    cnd1 =0
     x = list(reversed(x))
     for i in range(len(x)):
         if x[i] == '!':
             cnd+=1
-        else:
-            break
+        elif x[i] == '?':
+           cnd1+=1
+        elif x[i]!='!' and x[i]!='?':
+           break
     m = '!'*cnd
+    m1 = '?'*cnd1
     x = list(reversed(x))
     x = ''.join(x)
-    x = x.replace(m,'!')
+    if cnd1!=0:
+        x = x.replace(m1, '?')
+    if cnd!=0:
+        x = x.replace(m,'!')
     print(x)
 r(x)
