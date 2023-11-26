@@ -1,0 +1,15 @@
+x='ewug!!!!!!buwbfwhf!!!!!!!!'
+def r(x):
+    cnd = 0
+    x = list(reversed(x))
+    for i in range(len(x)):
+        if x[i] == '!':
+            cnd+=1
+        else:
+            break
+    m = '!'*cnd
+    x = list(reversed(x))
+    x = ''.join(x)
+    x = x.replace(m,'!')
+    print(x)
+r(x)
