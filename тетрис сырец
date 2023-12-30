@@ -1,0 +1,163 @@
+import random
+import sys
+dlinna=5
+schirina=7
+m = [['.' for i in range(dlinna)]for j in range(schirina)]
+ans = 0
+while True:
+    t=random.randint(0,3)
+    print('счет:',ans)
+    if t == 1 :
+        r = random.randint(0,4)
+        cnd = 0
+        y = 0 
+        cnd1 = 0
+        s=0
+        while True:
+            #print(y,r,cnd,m[y][r])
+            
+            if s == 0 and( y == (len(m)-1) or m[y][r] != '.') :
+                if cnd > 3 and y == (len(m)-1) or m[y][r] != '.'  :
+                    y = 0
+                    r = random.randint(0,4)
+                    cnd1 += 1
+                    powor = 0
+            if cnd ==  0 or cnd1 != 0:
+                m[y][r] = '[]'
+        
+            if cnd >= 1 and m[y+1][r] == '.': #and (a == 0 or d == 0) :
+                     
+                print(m[y+1][r])
+                y += 1       
+                        
+            for i in range(len(m)):
+                print(m[i],i)
+            
+            if cnd >= 2:
+                if y != len(m)-1:
+                    m[y-1][r] = '.'
+            s=0
+            # право лево
+            
+            a = int(input('двежение в лево'))
+            d = int(input('движение в право'))
+            if a !=0 :
+                s=1
+            if d != 0:
+                s=1
+            if a != 0  :
+                m[y][r] = '.'
+                m[y][r-a] = '[]'
+                r=r-a
+            if d != 0 and a == 0 :
+                if a == 0:
+                    m[y][r] = '.'
+                    m[y][r+d] = '[]'
+                    r = r+d
+        
+            #право лево
+            
+            if cnd == 1:
+                m[0] = ['.','.','.','.','.']
+                print(0)
+            cnd += 1
+            if cnd == 2:
+                print('пауза на 2 хода')
+            for i in range(len(m)):
+                if m[i] == ['[]','[]','[]','[]','[]']:
+                    m[i] = ['.','.','.','.','.']
+                    ans += 1
+
+                
+                
+                
+            
+            for i in range(10):
+                print('')
+            if y == (len(m)-1) :
+                break
+    if t == 2 :
+        r = random.randint(0,3)
+        cnd = 0
+        y = 0 
+        cnd1 = 0
+        ans = 0
+        s=0
+        while True:
+            if s == 0 and( y == (len(m)-1) or (m[y][r] != '.' and m[y][r+1] != '.')) :
+                if cnd > 3 and y == (len(m)-1) or (m[y][r] != '.' and m[y][r+1] != '.' ) :
+                    y = 0
+                    r = random.randint(1,3)
+                    cnd1 += 1
+                    powor = 0
+            if cnd ==  0 or cnd1 != 0:
+                m[y][r] = '[]'
+                m[y][r+1] = '[]'
+    
+            if cnd >= 1 and (m[y+1][r] == '.' and m[y+1][r+1] == '.'): #and (a == 0 or d == 0) :
+                 
+                print(m[y+1][r])
+                print(m[y+1][r+1])
+                y += 1       
+                    
+            for i in range(len(m)):
+                print(m[i],i)
+        
+            if cnd >= 2:
+                if y != len(m)-1:
+                    m[y-1][r] = '.'
+                    m[y-1][r+1] = '.'
+            s=0
+        
+            a = int(input('двежение в лево'))
+            d = int(input('движение в право'))
+            if a !=0 :
+                s=1
+            if d != 0:
+                s=1
+            if a != 0  :
+                m[y][r] = '.'
+                m[y][r+1] = '.'
+                m[y][r-a] = '[]'
+                m[y][r-a+1] = '[]'
+                r=r-a
+            if d != 0 and a == 0 :
+                if a == 0:
+                    m[y][r] = '.'
+                    m[y][r+1] = '.'
+                    m[y][r+d] = '[]'
+                    m[y][r+d+1] = '[]'
+                    r = r+d
+    
+        #право лево
+        
+            if cnd == 1:
+                m[0] = ['.','.','.','.','.']
+                print(0)
+            cnd += 1
+            if cnd == 2:
+                print('пауза на 2 хода')
+            
+            for i in range(10):
+                print('')
+            if y == (len(m)-1):
+                break
+    
+    
+    
+    #счет и проигрыш 
+    #for i in range(dlinna):
+        #if m[i] == ['[]','[]','[]','[]','[]']:
+            #m[i] = ['.','.','.','.','.']
+            #ans += 1  
+    #for i in range(dlinna*2):
+        #if m[0][i]=='[]' and m[1][i]=='[]' :
+            #print('проиграл')
+            #sys.exit()
+    
+    
+    
+    
+    
+    
+    
