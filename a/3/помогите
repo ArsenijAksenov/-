@@ -1,0 +1,11 @@
+from scipy.integrate import quad
+import math
+import scipy.special as special
+def f(x):
+    return(math.sin(10*x)/math.sin(x))**8#6 это длинна билетов
+pi = math.pi
+r = quad(f, 0, pi)
+r = int(r[0])
+a = r*(1/pi)
+a=round(a)
+print(a)
