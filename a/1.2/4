@@ -1,0 +1,25 @@
+import random
+print('.-','камень',',-','ножницы','/-','бумага')
+s= random.randint(1,4)
+print(s)
+if s == 1:
+    x=','
+if s == 2:
+    x='.'
+if s == 3:
+    x='/'
+y=input()
+def knb(x,y):
+    if ord(x) == ord(y):
+        print('ничья')
+    else:
+        if y=='/' and x == ',':
+            print('x',1)
+        elif x=='/' and y == ',':
+            print('y',2)
+        else:
+            if ord(x)<ord(y):
+                print('y',3)
+            elif ord(y)<ord(x):
+                print('x',4)
+knb(x,y)
