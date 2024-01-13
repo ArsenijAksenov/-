@@ -1,0 +1,10 @@
+a=input()
+a=a.split()
+ans=[]
+for i in range(len(a)):
+    if a[i].isalpha()==True:
+        ans.append(a[i])
+if ans[:len(ans)//2]==ans[(len(ans)//2)+1:]:
+    print('+')
+else:
+    print('-')
