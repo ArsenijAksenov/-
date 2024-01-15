@@ -1,0 +1,35 @@
+b = int(input())
+a = int(input())
+
+if a > b:
+    print('вы перепутали порядок')
+    
+m = [i for i in range(a+1)]
+cnd = []
+m[1] = 0
+i = 2
+while i <= a:
+    if m[i] != 0:
+        j = i*2
+        while j <= a :
+            m[j] = 0
+            j = j + i
+    i += 1
+
+m = set(m)
+m.remove(0)
+m = list(m)
+m = sorted(m)
+
+for i in range(len(m)-1):
+    #print(m[i],b,m[i+1])
+    if m[i] <= b and m[i+1] >= b:
+        cnd.append(m[i+1])
+
+l=min(cnd)
+
+for i in range(len(m)) :
+    if m[i] == l:
+        k = i
+#print(m[k:])
+print(sum(m[k:]))
