@@ -1,0 +1,12 @@
+a='www rrr ttt rrr ww www yyy ttt'
+m=[]
+a=a.split()
+n=[]
+for i in range(len(a) ):
+    if a[i] in m :
+        n.append(a[i])
+    m.append(a[i])
+for i in range(len(n)):
+    a.remove(n[i])
+a=sorted(a)
+print(a)
