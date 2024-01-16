@@ -1,7 +1,7 @@
 a=input()
 ans=[]
 for i in range(len(a)):
-    if a[i].isalpha()==True:
+    if a[i].isalpha() or a[i].isdigit():
         ans.append(a[i])
 if ans==ans[::-1]:
     print('+')
