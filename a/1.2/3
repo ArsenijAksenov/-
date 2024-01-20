@@ -1,8 +1,11 @@
 a=input()
 ans=[]
 for i in range(len(a)):
-    if a[i].isalpha() or a[i].isdigit():
-        ans.append(a[i])
+    if a[i]!=' ' and a[i]!=',':
+        #print(a[i])
+        s=a[i].lower()
+        ans.append(s)
+print(ans)
 if ans==ans[::-1]:
     print('+')
 else:
