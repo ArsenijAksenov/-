@@ -1,11 +1,1 @@
-inp = open("int",'r')
-n =[inp.readline().split()]
-n=n[0]
-n=n[0]
-d=0
-cnd=0
-for i in range(len(n)):
-    if i %2==0:
-        d+=int(n[i])
-        cnd+=1
-print(d//cnd)
+
