@@ -1,0 +1,17 @@
+    def __init__(self,a,b,c):
+        self.a=a
+        self.b=b
+        self.c=c
+    def is_t(self):
+        if type(self.a) == int and type(self.b) == int and type(self.c) == int:
+            print("нужно вводить только числа ")
+            if self.a < 0 and self.b < 0 or self.c < 0:
+                print('вводим только положительные числа')
+            elif self.a+self.b>self.c and self.a+self.c>self.b and self.c + self.b > self.a :
+                print('можно составить треугольник')
+            else:
+                print('жаль но из этого треугольник не составить')
+        else:
+            print("вводить только числа")
+b=TC(2,2,'jk')
+b.is_t()
