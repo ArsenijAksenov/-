@@ -1,0 +1,11 @@
+class soda:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def s_m_d(self):
+        if self.name == 'Николай':
+            pass
+        else:
+            print('я не',self.name,",а Николай")
+b=soda('r12',"15")
+b.s_m_d()
