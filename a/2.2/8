@@ -1,0 +1,24 @@
+import math
+class t:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+    def ras(self,f):
+        result = ((max(self.x,f.x)-min(self.x,f.x))**2+(max(self.y,f.y)-min(self.y,f.y))**2)**0.5
+        print(result)
+    def prov(self):
+        if self.x==0 or self.y ==0:
+            print('да')
+        else:
+            print('нет')
+    def perem(self,ras,gp):
+        ab=self.x+ras/math.cos(gp)
+        bc=self.y+ras/math.sin(gp)
+        print('новые координаты :',ab,bc)
+
+
+
+z=t(10,20)
+f=t(5,10)
+#z=ras(f)
+z.perem(10,45)
