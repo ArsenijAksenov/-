@@ -1,0 +1,20 @@
+class prod:
+    def __init__(self,zen,nas,kol):
+        self.zen=zen
+        self.nas=nas
+        self.kol=kol
+    def umen_kol_tov(self):
+        ism=int(input())
+        self.kol-=ism
+        print(self.kol)
+    def uvel_kol_tov(self):
+        ism=int(input())
+        self.kol+=ism
+        print(self.kol)
+    def ras(self):
+        result=self.kol*self.zen
+        print(result)
+
+
+b=prod(84,'ttt',67)
+b.umen_kol_tov()
