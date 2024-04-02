@@ -1,0 +1,5 @@
+def read():
+    inp = open("input.txt",'r')
+    q = [int(x) for x in inp.readline().split()]
+    return(list(q))
+print(read())
