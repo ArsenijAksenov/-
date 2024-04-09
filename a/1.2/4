@@ -1,7 +1,7 @@
 import random
 print('.-','камень',',-','ножницы','/-','бумага')
 s= random.randint(1,3)
-print('бог говорит',s)
+print('Бог говорит',s)
 if s == 1:
     x=','
 if s == 2:
