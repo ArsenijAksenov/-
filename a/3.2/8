@@ -1,0 +1,14 @@
+import random
+m=[]
+
+for i in range(1000):
+    m.append(random.randint(-100,100))
+
+print(m)
+N = len(m)
+for i in range(N-1):
+    for j in range(N-1-i):
+        if m[j] > m[j+1]:
+            m[j], m[j+1] = m[j+1], m[j]
+
+print(m)  
