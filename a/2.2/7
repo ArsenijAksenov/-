@@ -1,0 +1,28 @@
+class Bank:
+    def __init__(self, people, schet, balanse):
+        self.people = people
+        self.schet = schet
+        self.balanse = balanse
+        
+    def show_balanse(self):
+        print (self.balanse)
+    def popolnit(self):
+        a=int(input('Сумма ввода'))
+        b=a*0.99
+        c=self.balanse + b
+        print('на вашем балансе:  ',c)
+    def snat(self):
+        r=int(input('введите сколько хотите вывести:  '))
+        t=r*1.01
+        if self.balanse < t:
+            print(' недостаточно средств!!!')
+        else:
+            o=self.balanse - t
+            print('на вашем балансе:  ',o)
+            print('вы сняли:  ',r)
+        
+name1 = Bank("Петя",'42',0000)
+name2 = Bank("Николай", "666",7878787)
+name3 = Bank("Гоша","45",1000000000)
+
+name2.snat()
