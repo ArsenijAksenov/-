@@ -1,0 +1,28 @@
+import xml.etree.ElementTree as ET
+
+tree = ET.parse('p.xml')
+root = tree.getroot()
+def sort_po_zene(root):
+    zena = []
+    name = []
+    om = []
+    cnd = 0
+    for elem in root.iter():
+        if elem.tag == "zena" :
+            zena.append(elem.text)
+        elif elem.tag == "name":
+            name.append(elem.text)
+        elif elem.tag == "zena" or elem.tag == "name":
+            om.append(elem.text)
+
+    szena = sorted(zena)
+    sname = []
+    for i in range(len(zena)):
+        for j in range(len(zena)):
+            if zena [i] == szena[j]:
+                sname.append(name[i-1])
+                print(sname)
+    return(zena)
+zena = sort_po_zene(root)
+def ob_zena(zena):
+    print(sum(zena)//len(zena))
